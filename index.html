@@ -246,6 +246,10 @@
         .floating-element:nth-child(2) { top: 65%; right: 15%; animation-delay: 2s; font-size: 4rem;}
         .floating-element:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 4s; font-size: 6rem;}
         .floating-element:nth-child(4) { top: 40%; right: 5%; animation-delay: 1s; font-size: 3rem;}
+        .floating-element:nth-child(5) { top: 25%; right: 25%; animation-delay: 3s; font-size: 4.5rem;}
+        .floating-element:nth-child(6) { bottom: 30%; right: 10%; animation-delay: 5s; font-size: 3.5rem;}
+        .floating-element:nth-child(7) { top: 50%; left: 5%; animation-delay: 2.5s; font-size: 5rem;}
+        .floating-element:nth-child(8) { bottom: 10%; right: 40%; animation-delay: 1.5s; font-size: 4rem;}
         
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -318,67 +322,37 @@
             height: 400px;
         }
         
-        /* Menu Section */
+        /* Menu Sections (Breakfast and Bowls) */
         .menu {
             background: var(--light-cream);
         }
         
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             margin-top: 50px;
         }
         
-        .menu-item {
+        .menu-placeholder {
             background: white;
             border-radius: 20px;
-            padding: 30px;
+            height: 300px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             border-top: 5px solid var(--fresh-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #ccc;
         }
         
-        .menu-item:hover {
+        .menu-placeholder:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .menu-item h4 {
-            font-size: 1.5rem;
-            color: var(--tangerine-orange);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .menu-item .price {
-            font-size: 1.3rem;
-            color: var(--fresh-green);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .menu-item p {
-            color: var(--dark-text);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .menu-item .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .tag {
-            background: #e9f5db;
-            color: var(--fresh-green);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            font-weight: 500;
         }
         
         /* Location Section */
@@ -605,6 +579,7 @@
         .loader.hidden {
             opacity: 0;
             pointer-events: none;
+            visibility: hidden;
         }
         
         .loader-icon {
@@ -632,7 +607,8 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Our Story</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#breakfast">Breakfast</a></li>
+                <li><a href="#bowls">Bowls</a></li>
                 <li><a href="#location">Find Us</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="https://o.spoton.com/BL-D7FD-A56D-FAC3" target="_blank" class="order-btn">Order Online</a></li>
@@ -652,12 +628,16 @@
         <div class="floating-element">🍌</div>
         <div class="floating-element">🥝</div>
         <div class="floating-element">🥤</div>
+        <div class="floating-element">🍊</div>
+        <div class="floating-element">🫐</div>
+        <div class="floating-element">🥭</div>
+        <div class="floating-element">🍍</div>
         
         <div class="hero-content">
             <h1>Sip, Smile, Repeat.</h1>
             <p>Deliciously Fresh Smoothies & Juices Made With Love</p>
             <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">See Our Menu</a>
+                <a href="#breakfast" class="btn btn-primary">See Our Menu</a>
                 <a href="#location" class="btn btn-secondary">Visit Us Today</a>
             </div>
         </div>
@@ -680,70 +660,32 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section class="menu" id="menu">
+    <!-- Breakfast Menu Section -->
+    <section class="menu" id="breakfast">
         <div class="container">
-            <h2 class="section-title">Taste the Goodness</h2>
+            <h2 class="section-title">Breakfast Menu</h2>
             <div class="menu-grid">
-                <!-- Menu Item 1 -->
-                <div class="menu-item">
-                    <h4>Green Machine</h4>
-                    <p class="price">$7.50</p>
-                    <p>Our signature detox blend. Spinach, kale, green apple, banana, and a splash of almond milk to get you going.</p>
-                    <div class="tags">
-                        <span class="tag">Detox</span>
-                        <span class="tag">Fan Favorite</span>
-                    </div>
-                </div>
-                <!-- Menu Item 2 -->
-                <div class="menu-item">
-                    <h4>Berry Bliss</h4>
-                    <p class="price">$8.00</p>
-                    <p>A delicious mix of strawberries, blueberries, raspberries, and greek yogurt for a protein-packed treat.</p>
-                    <div class="tags">
-                        <span class="tag">High Protein</span>
-                        <span class="tag">Antioxidants</span>
-                    </div>
-                </div>
-                <!-- Menu Item 3 -->
-                <div class="menu-item">
-                    <h4>Tropical Tango</h4>
-                    <p class="price">$7.75</p>
-                    <p>Escape to paradise with this blend of mango, pineapple, passion fruit, and a hint of coconut water.</p>
-                    <div class="tags">
-                        <span class="tag">Refreshing</span>
-                        <span class="tag">Vegan</span>
-                    </div>
-                </div>
-                <!-- Menu Item 4 -->
-                <div class="menu-item">
-                    <h4>Sunshine Squeeze</h4>
-                    <p class="price">$7.00</p>
-                    <p>A bright and zesty juice made from fresh oranges, carrots, and a touch of ginger to awaken your senses.</p>
-                    <div class="tags">
-                        <span class="tag">Immunity Boost</span>
-                        <span class="tag">Fresh Juice</span>
-                    </div>
-                </div>
-                <!-- Menu Item 5 -->
-                <div class="menu-item">
-                    <h4>Peanut Butter Power</h4>
-                    <p class="price">$8.50</p>
-                    <p>The perfect post-workout fuel with banana, natural peanut butter, chocolate protein, and oat milk.</p>
-                    <div class="tags">
-                        <span class="tag">Workout Fuel</span>
-                        <span class="tag">High Protein</span>
-                    </div>
-                </div>
-                <!-- Menu Item 6 -->
-                <div class="menu-item">
-                    <h4>Build Your Own</h4>
-                    <p class="price">Starting at $6.50</p>
-                    <p>Choose your base, pick up to 3 fruits or veggies, and add your favorite boosters. Your perfect blend awaits!</p>
-                    <div class="tags">
-                        <span class="tag">Customizable</span>
-                    </div>
-                </div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bowls Menu Section -->
+    <section class="menu" id="bowls" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Bowls Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
+                <div class="menu-placeholder">Image Coming Soon</div>
             </div>
         </div>
     </section>
@@ -758,7 +700,8 @@
                     <div class="hours">
                         <h4>🕐 Opening Hours</h4>
                         <ul class="hours-list">
-                            <li><span>Monday - Sunday</span><span>9:00 AM - 7:00 PM</span></li>
+                            <li><span>Monday</span><span>Closed</span></li>
+                            <li><span>Tuesday - Sunday</span><span>9:00 AM - 7:00 PM</span></li>
                         </ul>
                     </div>
                     <p style="margin-top: 20px; font-size: 1.1rem;">
@@ -783,18 +726,18 @@
             <div class="reviews-container">
                 <div class="review-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"The Green Machine is my go-to every morning! So fresh and gives me the perfect boost to start my day. The staff is always so friendly!"</p>
-                    <p class="reviewer">- Jessica P.</p>
+                    <p class="review-text">"I love this place. There are so many delicious smoothies I wish I could visit daily! The service was amazing- she was so pleasant, helpful, and patient while I picked my selection. This has become my new favorite go to place!"</p>
+                    <p class="reviewer">- Karen Tucci</p>
                 </div>
                 <div class="review-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"Finally, a smoothie place that uses real, fresh ingredients. You can taste the quality. The Berry Bliss is to die for. Highly recommend!"</p>
-                    <p class="reviewer">- Mark T.</p>
+                    <p class="review-text">"The protein berry smoothie was great! They allow you to customize if need be and they're super friendly! Love having this local spot. Will definitely be coming back!"</p>
+                    <p class="reviewer">- Erin Clark</p>
                 </div>
                 <div class="review-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"My kids love building their own smoothies, and I love that it's healthy! A total win-win for our family. We're here at least twice a week."</p>
-                    <p class="reviewer">- Sarah L.</p>
+                    <p class="review-text">"Highly recommend. Huge menu of fresh and delicious options, real ingredients and friendly service. Food and smoothies were great, you can tell quality is important."</p>
+                    <p class="reviewer">- Ian Ballingall</p>
                 </div>
             </div>
         </div>
@@ -843,6 +786,11 @@
                 document.getElementById('loader').classList.add('hidden');
             }, 500); // Shorter delay
         });
+
+        // Failsafe to hide loader if window.load doesn't fire
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+        }, 1500); // Hide after 1.5 seconds max
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -895,4 +843,3 @@
     </script>
 </body>
 </html>
-
