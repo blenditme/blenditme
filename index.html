@@ -51,37 +51,55 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 50px;
-            padding: 15px 30px;
+            padding: 12px 30px;
             z-index: 1000;
             transition: all 0.3s ease;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 70px;
         }
         
         nav.scrolled {
             top: 10px;
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            height: 70px;
         }
         
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
         }
         
         .logo {
             font-family: 'Pacifico', cursive;
-            font-size: 32px;
+            font-size: 28px;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            height: 45px;
+        }
+        
+        .logo span {
             background: linear-gradient(45deg, var(--fresh-green), var(--tangerine-orange));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: all 0.4s ease;
+            line-height: 1;
+        }
+        
+        .logo img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            flex-shrink: 0;
         }
         
         .logo:hover {
-            transform: scale(1.05);
             filter: drop-shadow(0 0 15px rgba(85, 166, 48, 0.4));
         }
         
@@ -89,20 +107,28 @@
             font-size: 28px;
         }
         
+        nav.scrolled .logo img {
+            width: 35px;
+            height: 35px;
+        }
+        
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark-text);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             position: relative;
             transition: all 0.3s ease;
-            padding: 8px 16px;
+            padding: 8px 12px;
         }
         
         .nav-links a::after {
@@ -128,14 +154,14 @@
         .order-btn {
             background: linear-gradient(45deg, var(--tangerine-orange), var(--sunshine-yellow));
             color: white !important;
-            padding: 10px 28px !important;
+            padding: 8px 24px !important;
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(245, 136, 47, 0.25);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .order-btn:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(245, 136, 47, 0.35);
             filter: brightness(1.1);
             color: white !important;
@@ -318,8 +344,10 @@
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
+            object-fit: contain;
             height: 400px;
+            padding: 40px;
+            background: white;
         }
         
         /* Menu Sections (Breakfast and Bowls) */
@@ -534,6 +562,11 @@
             nav {
                 width: 95%;
                 padding: 10px 20px;
+                height: 60px;
+            }
+            
+            nav.scrolled {
+                height: 60px;
             }
             
             .nav-links {
@@ -583,8 +616,15 @@
         }
         
         .loader-icon {
-            font-size: 5rem;
+            width: 100px;
+            height: 100px;
             animation: spin 2s linear infinite;
+        }
+        
+        .loader-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         @keyframes spin {
@@ -597,13 +637,18 @@
 <body>
     <!-- Pre-loader -->
     <div class="loader" id="loader">
-        <div class="loader-icon">🥤</div>
+        <div class="loader-icon">
+            <img src="images/logo.png" alt="Blend It Logo">
+        </div>
     </div>
 
     <!-- Navigation Bar -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Blend It</a>
+            <a href="#home" class="logo">
+                <img src="images/logo.png" alt="Blend It">
+                <span>Blend It</span>
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Our Story</a></li>
@@ -654,7 +699,7 @@
                     <p>We source the freshest fruits and vegetables from local farms whenever possible. Every smoothie and juice on our menu is crafted with care, taste-tested to perfection, and designed to give you a natural boost of energy and nutrition.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://placehold.co/600x450/a7c957/ffffff?text=Our+Happy+Blenders" alt="Happy staff making smoothies">
+                    <img src="images/logo.png" alt="Blend It Logo">
                 </div>
             </div>
         </div>
